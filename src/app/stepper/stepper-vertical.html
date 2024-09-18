@@ -1,0 +1,67 @@
+
+  <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Nombre del Juego</ng-template>
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Apex Legends, LoL" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    
+
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Descripcion</ng-template>
+        <mat-form-field>
+          <mat-label>De que trata</mat-label>
+          <input matInput placeholder="Ex. Noche Estrellada" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+      
+    </mat-step>
+
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Fecha</ng-template>
+      
+        <mat-form-field>
+          <mat-label>Lanzamiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="thirdCtrl" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="saveGame()">Save</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+    
+  </mat-stepper>  
+  
+  
+  

@@ -1,0 +1,37 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.mat-nav-list {
+  padding-top: 10px;
+}
+
+.mat-list-item {
+  padding: 10px 16px; /* Ajusta el espaciado interno según sea necesario */
+  display: flex;
+  align-items: center; /* Alinea los íconos y el texto verticalmente */
+}
+
+.mat-list-item .mat-icon {
+  margin-right: 16px; /* Espacio entre el ícono y el texto */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+}
+
+.mat-list-item .mat-list-item-content {
+  font-size: 16px; /* Ajusta el tamaño del texto */
+}
+
